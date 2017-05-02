@@ -48,7 +48,8 @@ function Nx.Travel:Init()
 	self.WrathFlyName = GetSpellInfo (54197) or ""
 	self.AzerothFlyName = GetSpellInfo (90267) or ""
 	self.PandariaFlyName = GetSpellInfo(115913) or ""
-	self.DraenorFlyName = GetSpellInfo(191645) or "" 
+	self.DraenorFlyName = GetSpellInfo(191645) or ""
+	self.LegionFlyName = GetSpellInfo(233368) or ""
 end
 
 function Nx.Travel:Add (typ)
@@ -423,6 +424,11 @@ function Nx.Travel:MakePath (tracking, srcMapId, srcX, srcY, dstMapId, dstX, dst
 			local _,_,_,complete = GetAchievementInfo(10018)
 			if complete then
 				self.FlyingMount = GetSpellInfo(self.DraenorFlyName)
+			end
+		elseif cont1 == 8 then
+			local _,_,_,complete = GetAchievementInfo(11446)
+			if complete then
+				self.FlyingMount = GetSpellInfo(self.LegionFlyName)
 			end
 		end
 	end
